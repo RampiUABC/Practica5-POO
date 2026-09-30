@@ -1,7 +1,5 @@
 package org.uabc;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         System.out.println("CREANDO MAZO DE 52 CARTAS");
@@ -47,5 +45,21 @@ public class Main {
         System.out.println("Quedan " + mazo.getCantidad() + " cartas en el mazo");
         System.out.println("Primeras 5 cartas del mazo:");
         mazo.mostrarPrimeras(5);
+        System.out.println();
+
+
+        // PRÁCTICA #6: DEMOSTRACIÓN DE MÉTODO DE CLASE (Visualizador y Posicion)
+        System.out.println("--- PRÁCTICA 6: DESPLIEGUE CON MÉTODOS DE CLASE ---");
+
+        // 1. Obtenemos dos cartas del mazo para probar la visualización
+        Carta carta1 = mazo.repartir();
+        Carta carta2 = mazo.repartir();
+
+        // 2. Invocamos el método estático de la clase Visualizador sin hacer 'new Visualizador()'
+        System.out.println("Desplegando primera carta:");
+        Visualizador.carta(carta1, new Posicion(20, 40));
+
+        System.out.println("Desplegando segunda carta en otra posición:");
+        Visualizador.carta(carta2, new Posicion(100, 150));
     }
 }
